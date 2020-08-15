@@ -7,9 +7,9 @@ If you are a Windows user, the process requires extra steps which are not well d
 
 # Why?
 
-The goal is to coordinate the largest **simultaneous** decentralized audit of Bitcoin's monetary supply in history. Participants agree on a target block height, and the script will fetch the [block count](https://developer.bitcoin.org/reference/rpc/getblockcount.html) from your node every few seconds, counting down the remaining blocks
+The goal is to coordinate the largest **simultaneous decentralized audit** of Bitcoin's monetary supply in history. Participants agree on a target block height, and the script will fetch the [block count](https://developer.bitcoin.org/reference/rpc/getblockcount.html) from your node every few seconds, counting down the remaining blocks
 
-When the target block is reached, the script calls [gettxoutsetinf](https://developer.bitcoin.org/reference/rpc/gettxoutsetinfo.html), which provides statistics about Bitcoin's unspent transaction output set. If all goes well, users can take screenshots to post online to mark the occassion and verify that all nodes are in agreement about the total amount of bitcoin in existence.
+When the target block is reached, the script calls [gettxoutsetinfo](https://developer.bitcoin.org/reference/rpc/gettxoutsetinfo.html), which provides statistics about Bitcoin's unspent transaction output set. If all goes well, users can take screenshots to post online to mark the occassion, and more importantly, verify that all nodes are in agreement about the total amount of bitcoin in existence.
 
 ### Linux/MacOS users
 
