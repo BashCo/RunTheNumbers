@@ -6,7 +6,7 @@ This is a very simple script that runs in the command line. It's intended to be 
 
 ### Linux/MacOS users
 
-1. Download [runthenumbers.sh](https://github.com/BashCo/RunTheNumbers/blob/master/runthenumbers.sh) or save the raw text to a new file.
+1. Download [runthenumbers.sh](https://github.com/BashCo/RunTheNumbers/raw/master/runthenumbers.sh) or save the raw text to a new file.
 
 2. Copy the script to the machine that is running your node.
 
