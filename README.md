@@ -16,9 +16,9 @@ This is a very simple script that runs in the command line. It's intended to be 
 
     b. If your bitcoin.conf file doesn't have the `rpcuser` and `rpcpassword` variables, go ahead and add them, save the file, and **restart your node**. They should look like this:
 
-  `rpcuser=any_username`
+    `rpcuser=any_username`
 
-  `rpcpassword=any_password`
+    `rpcpassword=any_password`
 
 4. Edit the script you downloaded so that the `USERNAME` and `PASSWORD` variables match your `rpcuser` and `rpcpassword` variables in your bitcoin.conf file.
 
