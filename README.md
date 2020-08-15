@@ -1,7 +1,9 @@
 # RunTheNumbers
  audit the total bitcoin supply at future block height using your full node
 
-This is a very simple script that runs in the command line. It's intended to be easy enough to use that anyone with a Bitcoin node can participate without having extensive technical knowledge, but you do need a full node such as Bitcoin Core to participate. If you are a Windows user, the process requires extra steps because this script is designed for Linux and Mac operating systems.
+This is a very simple script that runs in the command line. It's intended to be easy enough to use that anyone with a Bitcoin node can participate without having extensive technical knowledge, but you do need a full node such as Bitcoin Core to participate. Currently this script also relies on Python to parse the data it recieves from your node.
+
+If you are a Windows user, the process requires extra steps because this script is designed for Linux and Mac operating systems.
 
 
 ### Linux/MacOS users
