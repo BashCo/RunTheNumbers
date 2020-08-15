@@ -12,9 +12,9 @@ This is a very simple script that runs in the command line. It's intended to be 
 
 3. Locate your [bitcoin.conf file](https://en.bitcoin.it/wiki/Data_directory).
 
-  a. If your data directory doesn't have a bitcoin.conf file, create a new text file and save it as `bitcoin.conf`.
+    a. If your data directory doesn't have a bitcoin.conf file, create a new text file and save it as `bitcoin.conf`.
 
-  b. If your bitcoin.conf file doesn't have the `rpcuser` and `rpcpassword` variables, go ahead and add them, save the file, and **restart your node**. They should look like this:
+    b. If your bitcoin.conf file doesn't have the `rpcuser` and `rpcpassword` variables, go ahead and add them, save the file, and **restart your node**. They should look like this:
 
   `rpcuser=any_username`
 
@@ -26,15 +26,15 @@ This is a very simple script that runs in the command line. It's intended to be 
 
 6. Open your command line or Terminal application. Navigate to the directory where you saved the script by using `cd` to *change directory*, followed by the file path to the script folder.
 
-  `cd /path/to/folder`
+    `cd /path/to/folder`
 
 7. Run the script:
 
-  `sh runthenumbers.sh` 
+    `sh runthenumbers.sh` 
 
-  or
+    or
 
-  `bash runthenumbers.sh`
+    `bash runthenumbers.sh`
 
 If the script runs successfully, you should see something like this:
 
@@ -56,3 +56,5 @@ The script will listen to your node for new blocks and count down accordingly. O
 See that `total_amount` line? You just verified exactly how many bitcoin exist right now!
 
 Take a screenshot of the output and post your results to social media using the [#RunTheNumbers](https://twitter.com/search?q=%23RunTheNumbers&src=typed_query&f=live) hashtag to compare the output of your node with that of your friends' nodes.
+
+https://twitter.com/BashCo_/status/1294183464611254272
