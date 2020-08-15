@@ -3,8 +3,13 @@
 
 This is a very simple script that runs in the command line. It's intended to be easy enough to use that anyone with a Bitcoin node can participate without having extensive technical knowledge, but you do need a full node such as Bitcoin Core to participate. Currently this script also relies on Python to parse the data it recieves from your node.
 
-If you are a Windows user, the process requires extra steps because this script is designed for Linux and Mac operating systems.
+If you are a Windows user, the process requires extra steps which are not well defined, because this script is designed for Linux and Mac operating systems. A Python version will be released later.
 
+# Why?
+
+The goal is to coordinate the largest **simultaneous** decentralized audit of Bitcoin's monetary supply in history. Participants agree on a target block height, and the script will fetch the [block count](https://developer.bitcoin.org/reference/rpc/getblockcount.html) from your node every few seconds, counting down the remaining blocks
+
+When the target block is reached, the script calls [gettxoutsetinf](https://developer.bitcoin.org/reference/rpc/gettxoutsetinfo.html), which provides statistics about Bitcoin's unspent transaction output set. If all goes well, users can take screenshots to post online to mark the occassion and verify that all nodes are in agreement about the total amount of bitcoin in existence.
 
 ### Linux/MacOS users
 
@@ -59,4 +64,6 @@ See that `total_amount` line? You just verified exactly how many bitcoin exist r
 
 Take a screenshot of the output and post your results to social media using the [#RunTheNumbers](https://twitter.com/search?q=%23RunTheNumbers&src=typed_query&f=live) hashtag to compare the output of your node with that of your friends' nodes.
 
-https://twitter.com/BashCo_/status/1294183464611254272
+Example: https://twitter.com/BashCo_/status/1294183464611254272
+
+Inspiration: https://twitter.com/bennd77/status/1291972028933734401
