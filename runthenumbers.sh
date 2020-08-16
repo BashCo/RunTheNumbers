@@ -7,10 +7,10 @@ PASSWORD="RPC_PASSWORD"
 IP_ADDRESS="127.0.0.1"
 PORT="8332"
 
-OUTPUT_FILE="the_numbers.txt"
-
 # This is the block height we're waiting for
 TARGET_BLOCK="644000"
+
+OUTPUT_FILE="the_numbers_${TARGET_BLOCK}.txt"
 
 # We'll set this to zero so we can update the console only when there's a new block
 LATEST_BLOCK="0"
