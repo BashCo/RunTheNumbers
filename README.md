@@ -60,7 +60,7 @@ The script will listen to your node for new blocks and count down accordingly. O
       "total_amount": 18459823.37870112
     }
 
-See that `total_amount` line? You just verified exactly how many bitcoin exist right now!
+See that `total_amount` line? You just verified exactly how many bitcoin exist right now! ([Why isn't it a nice round number?](https://bitcoin.stackexchange.com/questions/38994/will-there-be-21-million-bitcoins-eventually/38998#38998))
 
 Take a screenshot of the output and post your results to social media using the [#RunTheNumbers](https://twitter.com/search?q=%23RunTheNumbers&src=typed_query&f=live) hashtag to compare the output of your node with that of your friends' nodes.
 
