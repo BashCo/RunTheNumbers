@@ -1,8 +1,17 @@
 #!/bin/bash
 
-# You need to replace 'RPC_USERNAME' and 'RPC_PASSWORD' with the username and password in your bitcoin.conf file
-USERNAME="RPC_USERNAME"
-PASSWORD="RPC_PASSWORD"
+
+CONF_FILE=~/.bitcoin/bitcoin.conf
+
+if [ -f "$CONF_FILE" ]; then
+    # Try to get the username and password from bitcoin.conf, if it exists in its default location
+    USERNAME="$(grep rpcuser <$CONF_FILE | cut -d= -f2)"
+    PASSWORD="$(grep rpcpassword <$CONF_FILE | cut -d= -f2-)"
+else
+    # You need to replace 'RPC_USERNAME' and 'RPC_PASSWORD' with the username and password in your bitcoin.conf file
+    USERNAME="${USERNAME:-RPC_USERNAME}"
+    PASSWORD="${PASSWORD:-RPC_PASSWORD}"
+fi
 
 IP_ADDRESS="127.0.0.1"
 PORT="8332"
@@ -21,6 +30,7 @@ do
     # Check that USERNAME and PASSWORD are filled in
     if [ $USERNAME = "RPC_USERNAME" ] || [ $PASSWORD = "RPC_PASSWORD" ]; then
         echo "first you need to update the username and password located in the script header to match those in your bitcoin.conf file"
+        echo "or set the USERNAME and PASSWORD environment variables"
         exit
     fi
 
