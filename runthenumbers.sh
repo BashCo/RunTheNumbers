@@ -1,7 +1,14 @@
 #!/bin/bash
 
 
-CONF_FILE=~/.bitcoin/bitcoin.conf
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+	CONF_FILE=~/.bitcoin/bitcoin.conf
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+	CONF_FILE=~/Library/Application Support/Bitcoin/bitcoin.conf
+else
+	# lol
+	CONF_FILE=forgetit.conf
+fi
 
 if [ -f "$CONF_FILE" ]; then
     # Try to get the username and password from bitcoin.conf, if it exists in its default location
