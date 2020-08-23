@@ -8,7 +8,7 @@ IP_ADDRESS="127.0.0.1"
 PORT="8332"
 
 # This is the block height we're waiting for
-TARGET_BLOCK="645000"
+TARGET_BLOCK="650000"
 
 OUTPUT_FILE="the_numbers_${TARGET_BLOCK}.txt"
 
