@@ -15,6 +15,9 @@ OUTPUT_FILE="the_numbers_${TARGET_BLOCK}.txt"
 # We'll set this to zero so we can update the console only when there's a new block
 LATEST_BLOCK="0"
 
+# Define the path to the python binary (in case you have it installed elsewhere)
+PYTHONCMD="/usr/bin/python"
+
 # This will query your node repeatedly until the target block height is reached
 while true
 do
@@ -25,12 +28,12 @@ do
     fi
 
     # This fetches the current block height from your full node.
-    CURRENT_BLOCK=$(curl -s --user "${USERNAME}":"${PASSWORD}" --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockcount", "params": [] }' -H 'content-type: text/plain;' http://${IP_ADDRESS}:${PORT}/ | python -c "import sys, json; print(json.load(sys.stdin)['result'])")
+    CURRENT_BLOCK=$(curl -s --user "${USERNAME}":"${PASSWORD}" --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getblockcount", "params": [] }' -H 'content-type: text/plain;' http://${IP_ADDRESS}:${PORT}/ | ${PYTHONCMD} -c "import sys, json; print(json.load(sys.stdin)['result'])")
 
     # If the block height matches, call gettxoutsetinfo and print to file
     if [ $CURRENT_BLOCK = $TARGET_BLOCK ]; then
         echo "$CURRENT_BLOCK/$TARGET_BLOCK: running the numbers...";
-        TXOUTSETINFO=$(curl -s --user "${USERNAME}":"${PASSWORD}" --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "gettxoutsetinfo", "params":[] }' -H 'content-type: text/plain;' http://${IP_ADDRESS}:${PORT}/ | python -c "import sys, json; parsed = json.load(sys.stdin)['result']; print(json.dumps(parsed, indent=2))")
+        TXOUTSETINFO=$(curl -s --user "${USERNAME}":"${PASSWORD}" --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "gettxoutsetinfo", "params":[] }' -H 'content-type: text/plain;' http://${IP_ADDRESS}:${PORT}/ | ${PYTHONCMD} -c "import sys, json; parsed = json.load(sys.stdin)['result']; print(json.dumps(parsed, indent=2))")
         echo
         echo
         echo "${TXOUTSETINFO}"
